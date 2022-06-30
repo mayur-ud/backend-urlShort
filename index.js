@@ -1,12 +1,15 @@
 const express = require('express');
 const connectToDB = require('./config/database')
+const cors = require('cors')
 require('dotenv').config();
 
 const app = express()
 
 connectToDB();
 
-app.use(allowCrossDomain);
+app.use(cors({
+    origin: '*'
+}));
 app.use(express.json({extended : false}));
 
 app.use('/' , require('./routes/index'));
