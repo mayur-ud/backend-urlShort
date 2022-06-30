@@ -6,7 +6,7 @@ const app = express()
 
 connectToDB();
 
-
+app.use(allowCrossDomain);
 app.use(express.json({extended : false}));
 
 app.use('/' , require('./routes/index'));
