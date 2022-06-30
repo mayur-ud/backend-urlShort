@@ -22,9 +22,7 @@ router.get('/:code' , async (req , res)=>{
             else{
                 obj.totalClicks += 1;
                 obj.save();
-            }
-            
-            
+            } 
             res.redirect(url.longUrl);
         }
         else{
